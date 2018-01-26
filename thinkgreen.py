@@ -6,9 +6,15 @@ global avocado
 global whey
 global agave
 global doneString
+global baseString
+global ingredientString
+global liquidString
 
 #defining constants
-doneString = "You have reached the maximum ingredients. Press done if complete or continue to add more for additional cost"
+doneString = "Press done if complete or continue to add more for additional cost:"
+baseString = "Select your base ingredient:"
+liquidString = "Select your liquid:"
+ingredientString = "Select ingredients from list, when complete press done:"
 
 #classes to differentiate the types of ingredients
 class Fruit:
@@ -35,10 +41,14 @@ def defineFlavors():
     global whey
     global agave
 
-def total(mixList):
+def updateTotal(mixList):
     global doneString
     total = 0
     for ingredients in mixList:
         if total >= 8:
             print(doneString)
         total += ingredients.amount
+
+
+
+
