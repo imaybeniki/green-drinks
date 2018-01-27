@@ -1,5 +1,6 @@
 #global variables of each type of fruit/veggie
 global banana
+global strawberry
 global apple
 global spinach
 global avocado
@@ -36,10 +37,28 @@ class Addition:
 def defineFlavors():
     global banana
     global apple
+    global strawberry
     global spinach
     global avocado
     global whey
     global agave
+
+    banana = Fruit()
+    apple = Fruit()
+    strawberry = Fruit()
+    spinach = Vegetable()
+    avocado = Vegetable()
+    whey = Addition()
+    agave = Addition()
+
+    banana.mixList = set([banana, apple, strawberry, spinach, whey, agave])
+    apple.mixList = set([banana, apple, strawberry, spinach, whey, agave])
+    strawberry.mixList = set([banana, apple, strawberry, whey, agave])
+    spinach.mixList = set([banana, apple, whey, agave])
+    whey.mixList = set([banana, apple, strawberry, spinach, whey, agave])
+    agave.mixList = set([banana, apple, strawberry, spinach, whey])
+
+    print(banana.mixList.union(whey))
 
 def updateTotal(mixList):
     global doneString
@@ -48,6 +67,27 @@ def updateTotal(mixList):
         if total >= 8:
             print(doneString)
         total += ingredients.amount
+    return total
+
+def main():
+    global liquidString
+    global baseString
+    global ingredientString
+    global doneString
+    doneYet = True
+
+    defineFlavors()
+
+    liquid = input(liquidString)
+    base = input(baseString)
+    mixList = []
+    while(not doneYet):
+        newIngredient = input(ingredientString)
+        if newIngredient is 'Done' or 'DONE' or 'done':
+            break
+        mixList.append(newIngredient)
+
+
 
 
 
