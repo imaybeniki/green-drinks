@@ -11,6 +11,10 @@ global baseString
 global ingredientString
 global liquidString
 
+#instead of this, globals will be from the database
+#how to save the mixlist items in database?
+#can a column start as a list?
+
 # defining constants
 doneString = "Press done if complete or continue to add more for additional cost: \n"
 baseString = "Select your base ingredient from options below: \n"
@@ -104,10 +108,7 @@ def main():
 
     while True:
         new_ingredient = input(ingredientString + str(options) + "\nIngredient:")
-        if new_ingredient is 'Done' or 'DONE' or 'done':
-            break
         mix_list.append(new_ingredient)
-        updateTotal(mix_list)
         if new_ingredient is 'Banana' or 'banana':
             options = banana.mix_list.intersection(options)
         elif new_ingredient is 'Apple' or 'apple':
