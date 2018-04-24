@@ -1,1 +1,4 @@
-This python application allows you to create the perfect smoothie every time. Using decision trees and set theory, it will make sure that all of the flavors and amounts added are compatible. Currently, this is a standalone Python program. I am currently working on getting certified in Azure Machine Learning and incorporating ML functions to more accurately predict whether the smoothie will be good.
+Azure_smooth.py - Run this code to create a smoothie that tastes good every time
+thinkgreen.py - Run this code to test with hard-coded data (for testing purposes only)
+
+The csv files include data based on personal preferences and experience working at a smoothie shop for seven years
