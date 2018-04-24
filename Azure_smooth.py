@@ -7,6 +7,15 @@ for line in reader:
     sl = set(line)
     dic.update({i: sl})
 
-for n in range(6):
-    print("Select an ingredient from list")
-    print(dic.get('All'))
+product = []
+smoothie = dic.get('Almond Milk')
+del dic['Almond Milk']
+while len(product) < 7:
+    fruit = input("Please select ingredient from list:\n" + str(smoothie) + '\n')
+    if fruit in dic:
+        smoothie = set.intersection(smoothie, dic.get(fruit))
+        product.append(fruit)
+    else:
+        print("Sorry, that ingredient was not recognized")
+
+print('Your smoothie contains ' + str(product))
