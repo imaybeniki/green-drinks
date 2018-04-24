@@ -1,16 +1,12 @@
 import csv
 f = open('combinations.csv', 'r')
 reader = csv.reader(f)
-combos = []
+dic = {}
 for line in reader:
     i = line[0]
     sl = set(line)
-    dic = {i: sl}
-    combos.append(dic)
+    dic.update({i: sl})
 
-print(combos)
-
-
-
-
-
+for n in range(6):
+    print("Select an ingredient from list")
+    print(dic.get('All'))
